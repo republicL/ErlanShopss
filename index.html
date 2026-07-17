@@ -1479,7 +1479,7 @@
             </div>
         </section>
 
-        <!-- ===== PRICES (tetap ada untuk referensi, diakses via sidebar) ===== -->
+        <!-- ===== PRICES ===== -->
         <section id="prices" class="page-section">
             <div class="section-title">
                 <i class="fas fa-tags"></i>
@@ -1488,7 +1488,7 @@
             <div class="section-divider"></div>
             <p class="section-sub">Pilih paket yang sesuai, klik "Pesan" untuk chat via WhatsApp</p>
 
-            <!-- Nomor Kosong -->
+            <!-- Nomor Kosong (UPDATED) -->
             <div class="price-section" id="emptyNumbers">
                 <div class="price-group-title">
                     📱 Nomor Kosong
@@ -1496,13 +1496,17 @@
                 </div>
                 <div class="price-grid">
                     <div class="price-card"><span class="label">🇮🇩 +62</span><span class="price">5K</span><button class="btn-small" data-item="+62" data-price="5K" data-service="Nomor Kosong">Pesan</button></div>
-                    <div class="price-card"><span class="label">🇵🇭 +63</span><span class="price">5K</span><button class="btn-small" data-item="+63" data-price="5K" data-service="Nomor Kosong">Pesan</button></div>
-                    <div class="price-card"><span class="label">🇨🇦 +1</span><span class="price">10K</span><button class="btn-small" data-item="+1" data-price="10K" data-service="Nomor Kosong">Pesan</button></div>
                     <div class="price-card"><span class="label">🇨🇴 +57</span><span class="price">5K</span><button class="btn-small" data-item="+57" data-price="5K" data-service="Nomor Kosong">Pesan</button></div>
-                    <div class="price-card"><span class="label">🇲🇾 +60</span><span class="price">6K</span><button class="btn-small" data-item="+60" data-price="6K" data-service="Nomor Kosong">Pesan</button></div>
-                    <div class="price-card"><span class="label">🇹🇭 +66</span><span class="price">6K</span><button class="btn-small" data-item="+66" data-price="6K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇦🇫 +93</span><span class="price">5K</span><button class="btn-small" data-item="+93" data-price="5K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇨🇦 +1</span><span class="price">6K</span><button class="btn-small" data-item="+1 (CA)" data-price="6K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇺🇸 +1</span><span class="price">6K</span><button class="btn-small" data-item="+1 (US)" data-price="6K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇦🇱 +355</span><span class="price">7K</span><button class="btn-small" data-item="+355" data-price="7K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇵🇭 +63</span><span class="price">7K</span><button class="btn-small" data-item="+63" data-price="7K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇲🇾 +60</span><span class="price">7K</span><button class="btn-small" data-item="+60" data-price="7K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇦🇷 +54</span><span class="price">7K</span><button class="btn-small" data-item="+54" data-price="7K" data-service="Nomor Kosong">Pesan</button></div>
+                    <div class="price-card"><span class="label">🇹🇭 +66</span><span class="price">8K</span><button class="btn-small" data-item="+66" data-price="8K" data-service="Nomor Kosong">Pesan</button></div>
                     <div class="price-card"><span class="label">🇰🇭 +855</span><span class="price">10K</span><button class="btn-small" data-item="+855" data-price="10K" data-service="Nomor Kosong">Pesan</button></div>
-                    <div class="price-card" style="border-color:rgba(37,99,235,.15);"><span class="label">💬 Tanya Saja</span><span class="price" style="color:#2563eb;">—</span><button class="btn-small" style="border-color:#2563eb;color:#2563eb;" data-item="Tanya Saja" data-price="—" data-service="Nomor Kosong">Hubungi</button></div>
+                    <div class="price-card" style="border-color:rgba(37,99,235,.15);"><span class="label">💬 Tanya-Tanya Saja</span><span class="price" style="color:#2563eb;">—</span><button class="btn-small" style="border-color:#2563eb;color:#2563eb;" data-item="Tanya Saja" data-price="—" data-service="Nomor Kosong">Hubungi</button></div>
                 </div>
             </div>
 
@@ -1659,7 +1663,6 @@
             enterBtn.addEventListener('click', function() {
                 welcome.classList.add('hide');
                 mainContent.classList.add('visible');
-                // Mulai efek typing setelah main content muncul
                 setTimeout(startTyping, 400);
             });
 
@@ -1675,13 +1678,11 @@
                 const titleText = '✦ Selamat Datang';
                 const subText = 'Layanan digital terbaik untuk kebutuhan Anda';
 
-                // Kosongkan dulu
                 titleEl.innerHTML = '';
                 subEl.innerHTML = '';
 
                 let titleIndex = 0;
                 let subIndex = 0;
-                let isTitleDone = false;
 
                 function typeTitle() {
                     if (titleIndex < titleText.length) {
@@ -1689,10 +1690,7 @@
                         titleIndex++;
                         setTimeout(typeTitle, 60);
                     } else {
-                        isTitleDone = true;
-                        // Tambahkan kursor berkedip setelah selesai (opsional)
                         titleEl.innerHTML += '<span class="typing-cursor"></span>';
-                        // Mulai sub judul setelah jeda
                         setTimeout(typeSub, 300);
                     }
                 }
@@ -1707,7 +1705,6 @@
                     }
                 }
 
-                // Mulai mengetik judul
                 typeTitle();
             }
 
@@ -1829,13 +1826,17 @@
                     action: 'Pesan Sekarang',
                     priceList: [
                         { label: '🇮🇩 +62', value: '5K' },
-                        { label: '🇵🇭 +63', value: '5K' },
-                        { label: '🇨🇦 +1', value: '10K' },
                         { label: '🇨🇴 +57', value: '5K' },
-                        { label: '🇲🇾 +60', value: '6K' },
-                        { label: '🇹🇭 +66', value: '6K' },
+                        { label: '🇦🇫 +93', value: '5K' },
+                        { label: '🇨🇦 +1', value: '6K' },
+                        { label: '🇺🇸 +1', value: '6K' },
+                        { label: '🇦🇱 +355', value: '7K' },
+                        { label: '🇵🇭 +63', value: '7K' },
+                        { label: '🇲🇾 +60', value: '7K' },
+                        { label: '🇦🇷 +54', value: '7K' },
+                        { label: '🇹🇭 +66', value: '8K' },
                         { label: '🇰🇭 +855', value: '10K' },
-                        { label: '💬 Tanya Saja', value: '—' }
+                        { label: '💬 Tanya-Tanya Saja', value: '—' }
                     ],
                     total: '📌 Tersedia berbagai negara',
                     waLink: 'https://wa.me/62895322098098?text=Saya%20tertarik%20dengan%20Nomor%20Kosong'
@@ -1977,7 +1978,7 @@
                 themeBtn.textContent = isLight ? '☀️' : '🌙';
             });
 
-            // ─── RESPONSIVE: close sidebar on resize ───
+            // ─── RESPONSIVE ───
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 820) {
                     sidebar.classList.remove('open');
